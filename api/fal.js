@@ -14,12 +14,12 @@ const FAL_QUEUE_BASE = "https://queue.fal.run";
 
 // Lock down which paths this proxy will forward
 const ALLOWED_PATHS = [
-  /^\/fal-ai\/kling-video\/v[0-9.]+\/(pro|standard|master|turbo)\/text-to-video$/,
-  /^\/fal-ai\/kling-video\/v[0-9.]+(\/turbo)?\/(pro|standard|master)\/text-to-video$/,
-  /^\/fal-ai\/kling-video\/v2\.6\/pro\/text-to-video$/,
-  /^\/fal-ai\/kling-video\/v2\.5-turbo\/pro\/text-to-video$/,
-  /^\/fal-ai\/kling-video\/v2\.1\/master\/text-to-video$/,
+  // Submit text-to-video (any Kling version/tier)
+  /^\/fal-ai\/kling-video\/[a-zA-Z0-9.-]+\/(pro|standard|master|turbo)\/text-to-video$/,
+  /^\/fal-ai\/kling-video\/v[0-9.]+\/(pro|standard|master)\/text-to-video$/,
+  // Status and result polling — supports both flat and tiered model paths
   /^\/fal-ai\/kling-video\/requests\/[a-zA-Z0-9-]+(\/status)?$/,
+  /^\/fal-ai\/kling-video\/[a-zA-Z0-9.-]+\/(pro|standard|master|turbo)\/requests\/[a-zA-Z0-9-]+(\/status)?$/,
 ];
 
 module.exports = async function handler(req, res) {
