@@ -20,6 +20,9 @@ const ALLOWED_PATHS = [
   // Status and result polling — supports both flat and tiered model paths
   /^\/fal-ai\/kling-video\/requests\/[a-zA-Z0-9-]+(\/status)?$/,
   /^\/fal-ai\/kling-video\/[a-zA-Z0-9.-]+\/(pro|standard|master|turbo)\/requests\/[a-zA-Z0-9-]+(\/status)?$/,
+  // Lyria 2 music generation
+  /^\/fal-ai\/lyria2$/,
+  /^\/fal-ai\/lyria2\/requests\/[a-zA-Z0-9-]+(\/status)?$/,
 ];
 
 module.exports = async function handler(req, res) {
